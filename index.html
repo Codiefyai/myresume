@@ -900,7 +900,7 @@
                min-width: 75%;
                width: 75%;
                 margin: 0;
-            }
+                      }
              .sidebar {
                position: sticky;
               top: 60px;
@@ -914,7 +914,7 @@
                 flex-direction: column;
            }
                .avatar-box img {
-                 width                   width: 150px;
+                 width: 150px;
              }
              .info-content .name {
                white-space: nowrap;
@@ -1211,6 +1211,7 @@
                             <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input>
                         </div>
                         <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+                         <div class="g-recaptcha" data-sitekey="6LdDH8gqAAAAAHxZOnP7eGLMKEuBIXMPfIwC54Lc"></div>
                         <button class="form-btn" type="submit" data-form-btn>
                             <ion-icon name="paper-plane"></ion-icon>
                             <span>Send Message</span>
@@ -1225,7 +1226,7 @@
             </article>
         </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         // Initialize EmailJS with your User ID
         (function() {
@@ -1267,6 +1268,17 @@
             });
         }
 
+         // Theme Toggle
+         const themeToggle = document.getElementById('theme-toggle');
+         const body = document.body;
+
+         themeToggle.addEventListener('click', () => {
+             const currentTheme = body.getAttribute('data-theme');
+             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+             body.setAttribute('data-theme', newTheme);
+             themeToggle.setAttribute('data-theme', newTheme)
+         });
+        
         // Enabling Contact Form
         const form = document.querySelector('[data-form]');
         const formInputs = document.querySelectorAll('[data-form-input]');
@@ -1303,18 +1315,7 @@
                 });
         });
     </script>
-     <script>
-        // Theme Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-    
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = body.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            body.setAttribute('data-theme', newTheme);
-            themeToggle.setAttribute('data-theme', newTheme)
-           });
-      </script>
+       <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
