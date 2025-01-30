@@ -914,7 +914,7 @@
                 flex-direction: column;
            }
                .avatar-box img {
-                 width: 150px;
+                 width                   width: 150px;
              }
              .info-content .name {
                white-space: nowrap;
@@ -1135,13 +1135,13 @@
                             <span>November 2022-January 2025</span>
                             <span>Public Sector Network Australian & US</span>
                             <p class="timeline-text" style="margin-left:20px;">
-                                ● Spearheaded outreach via email,call,and meetings to secure high-value event attendees.<br>
+                                ● Spearheaded outreach via email, call, and meetings to secure high-value event attendees.<br>
                                 ● Identified and nurtured leads using LinkedIn Sales Navigator and Hubspot.<br>
                                 ● Prepared and presented comprehensive weekly client reports to stakeholders.
                             </p>
                             <p style="margin-left:20px;">Key Achievements:</p>
                             <p style="margin-left:20px;">
-                                ● Built and maintained strong client relationships, contributing to event success in 2021 and 2023
+                                -Built and maintained strong client relationships, contributing to event success in 2021 and 2023
                             </p>
                         </li>
                         <li class="timeline-item">
@@ -1205,7 +1205,7 @@
                 </section>
                 <section class="contact-form">
                     <h3 class="h3 form-title">Contact Form</h3>
-                     <form action="https://formspree.io/f/xwkyqknr" method="POST" class="form" data-form>
+                     <form action="" method="POST" class="form" data-form>
                         <div class="input-wrapper">
                             <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
                             <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input>
@@ -1215,11 +1215,23 @@
                             <ion-icon name="paper-plane"></ion-icon>
                             <span>Send Message</span>
                         </button>
+                       <!-- 
+                           reCAPTCHA
+                           Site Key: 6LdDH8gqAAAAAHxZOnP7eGLMKEuBIXMPfIwC54Lc
+                           Secret Key 6LdDH8gqAAAAAKjWubX9E3wLhs2evTFCZrY7oNdm
+                       -->
                     </form>
                 </section>
             </article>
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your User ID
+        (function() {
+            emailjs.init('pHN5zJwIfgWLCrhiF'); // Replace with your EmailJS User ID
+        })();
+    </script>
     <script>
         'use strict';
 
@@ -1257,42 +1269,52 @@
 
         // Enabling Contact Form
         const form = document.querySelector('[data-form]');
-const formInputs = document.querySelectorAll('[data-form-input]');
-const formBtn = document.querySelector('[data-form-btn]');
+        const formInputs = document.querySelectorAll('[data-form-input]');
+        const formBtn = document.querySelector('[data-form-btn]');
 
-// Enable/disable the submit button based on form validity
-for (let i = 0; i < formInputs.length; i++) {
-    formInputs[i].addEventListener('input', function () {
-        if (form.checkValidity()) {
-            formBtn.removeAttribute('disabled');
-        } else {
-            formBtn.setAttribute('disabled', '');
-        }
-    });
-}
-
-// Handle form submission
-form.addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent the default form submission
-
-    // Disable the button to prevent multiple submissions
-    formBtn.setAttribute('disabled', '');
-    formBtn.innerHTML = 'Sending...';
-
-    // Send the email using EmailJS
-    emailjs.sendForm('service_mvv5226', 'template_s8szbfd', form)
-        .then(function (response) {
-            alert('Message sent successfully!');
-            form.reset(); // Clear the form
-            formBtn.innerHTML = 'Send Message';
-        }, function (error) {
-            alert('Failed to send the message. Please try again.');
-            formBtn.removeAttribute('disabled');
-            formBtn.innerHTML = 'Send Message';
-        });
-});
+         for(let i = 0; i < formInputs.length; i++) {
+             formInputs[i].addEventListener('input', function () {
+                 if(form.checkValidity()) {
+                     formBtn.removeAttribute('disabled');
+                  } else {
+                     formBtn.setAttribute('disabled', '');
+                  }
+            });
          }
+
+         // Handle form submission
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Disable the button to prevent multiple submissions
+            formBtn.setAttribute('disabled', '');
+            formBtn.innerHTML = 'Sending...';
+
+            // Send the email using EmailJS
+            emailjs.sendForm('service_mvv5226', 'template_s8szbfd', form)
+                .then(function (response) {
+                    alert('Message sent successfully!');
+                    form.reset(); // Clear the form
+                    formBtn.innerHTML = 'Send Message';
+                }, function (error) {
+                    alert('Failed to send the message. Please try again.');
+                    formBtn.removeAttribute('disabled');
+                    formBtn.innerHTML = 'Send Message';
+                });
+        });
     </script>
+     <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+    
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            themeToggle.setAttribute('data-theme', newTheme)
+           });
+      </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
