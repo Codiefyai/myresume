@@ -1280,7 +1280,7 @@ form.addEventListener('submit', function (event) {
     formBtn.innerHTML = 'Sending...';
 
     // Send the email using EmailJS
-    emailjs.sendForm('service_mvv5226', 'gmail.com', form)
+    emailjs.sendForm('service_mvv5226', 'template_s8szbfd', form)
         .then(function (response) {
             alert('Message sent successfully!');
             form.reset(); // Clear the form
