@@ -1135,7 +1135,7 @@
                             <span>November 2022-January 2025</span>
                             <span>Public Sector Network Australian & US</span>
                             <p class="timeline-text" style="margin-left:20px;">
-                                ● Spearheaded outreach via email, call, and meetings to secure high-value event attendees.<br>
+                                ● Spearheaded outreach via email,call,and meetings to secure high-value event attendees.<br>
                                 ● Identified and nurtured leads using LinkedIn Sales Navigator and Hubspot.<br>
                                 ● Prepared and presented comprehensive weekly client reports to stakeholders.
                             </p>
@@ -1257,17 +1257,40 @@
 
         // Enabling Contact Form
         const form = document.querySelector('[data-form]');
-        const formInputs = document.querySelectorAll('[data-form-input]');
-        const formBtn = document.querySelector('[data-form-btn]');
+const formInputs = document.querySelectorAll('[data-form-input]');
+const formBtn = document.querySelector('[data-form-btn]');
 
-         for(let i = 0; i < formInputs.length; i++) {
-             formInputs[i].addEventListener('input', function () {
-                 if(form.checkValidity()) {
-                     formBtn.removeAttribute('disabled');
-                  } else {
-                     formBtn.setAttribute('disabled', '');
-                  }
-            });
+// Enable/disable the submit button based on form validity
+for (let i = 0; i < formInputs.length; i++) {
+    formInputs[i].addEventListener('input', function () {
+        if (form.checkValidity()) {
+            formBtn.removeAttribute('disabled');
+        } else {
+            formBtn.setAttribute('disabled', '');
+        }
+    });
+}
+
+// Handle form submission
+form.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Disable the button to prevent multiple submissions
+    formBtn.setAttribute('disabled', '');
+    formBtn.innerHTML = 'Sending...';
+
+    // Send the email using EmailJS
+    emailjs.sendForm('service_mvv5226', 'gmail.com', form)
+        .then(function (response) {
+            alert('Message sent successfully!');
+            form.reset(); // Clear the form
+            formBtn.innerHTML = 'Send Message';
+        }, function (error) {
+            alert('Failed to send the message. Please try again.');
+            formBtn.removeAttribute('disabled');
+            formBtn.innerHTML = 'Send Message';
+        });
+});
          }
     </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
