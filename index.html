@@ -7,6 +7,7 @@
     <title>Flynn Pontino - Telesales Professional</title>
     <link rel="shortcut icon" href="https://i.postimg.cc/9fqYVvxh/logo.png" type="image/x-icon">
     <style>
+        /* Import Font and Define Variables */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
         :root {
@@ -662,6 +663,105 @@
             .form-btn:disabled:hover::before {
                 background: var(--bg-gradient-jet);
         }
+        /* Notification Styles */
+       .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.75);
+            color: var(--white2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.3s ease;
+            max-width: 400px;
+             border: 1px solid var(--orange-yellow-crayola);
+             pointer-events: none;
+         }
+        .notification.show {
+           opacity: 1;
+            transform: translateY(0);
+         }
+         .notification h3 {
+             font-size: 18px;
+             margin-bottom: 10px;
+          }
+         .notification p {
+              font-size: 15px;
+          }
+        /* Button Styling */
+        .export-button-container {
+             margin-top: 20px;
+              text-align: center;
+             margin-bottom: 30px;
+        }
+       .export-button {
+             position: relative;
+              background: var(--border-gradient-onyx);
+            color: var(--orange-yellow-crayola);
+            display: flex;
+             justify-content: center;
+            align-items: center;
+           gap: 10px;
+            padding: 13px 20px;
+           border-radius: 14px;
+              font-size: var(--fs6);
+           text-transform: capitalize;
+           box-shadow: var(--shadow3);
+           z-index: 1;
+                transition: background-color 0.3s ease;
+        }
+        .export-button::before {
+            content: '';
+            position: absolute;
+            inset: 1px;
+            background: var(--bg-gradient-jet);
+            border-radius: inherit;
+            transition: background-color 0.3s ease;
+            z-index: -1;
+        }
+            .export-button:hover {
+                background: var(--bg-gradient-yellow1);
+            }
+            .export-button:hover::before {
+                background: var(--bg-gradient-yellow2);
+        }
+         /* Edit Buttons */
+       .edit-buttons { margin-top: 15px; display: flex; justify-content: center; gap: 10px; }
+        .edit-buttons button {
+            position: relative;
+             background: var(--border-gradient-onyx);
+            color: var(--orange-yellow-crayola);
+            display: flex;
+             justify-content: center;
+            align-items: center;
+           gap: 10px;
+            padding: 10px 15px;
+           border-radius: 14px;
+              font-size: var(--fs7);
+           text-transform: capitalize;
+           box-shadow: var(--shadow3);
+           z-index: 1;
+                transition: background-color 0.3s ease;
+        }
+        .edit-buttons button::before {
+            content: '';
+            position: absolute;
+            inset: 1px;
+            background: var(--bg-gradient-jet);
+            border-radius: inherit;
+            transition: background-color 0.3s ease;
+            z-index: -1;
+        }
+            .edit-buttons button:hover {
+                background: var(--bg-gradient-yellow1);
+            }
+            .edit-buttons button:hover::before {
+                background: var(--bg-gradient-yellow2);
+         }
 /* MEDIA QUERIES */
     @media (min-width: 450px) {
             .clients-item {
@@ -805,7 +905,7 @@
         .article-title {
                 padding-bottom: 20px;
         }
-        .input-wrapper {
+        .input -wrapper {
                 grid-template-columns: 1fr 1fr;
         }
 
@@ -927,34 +1027,35 @@ position: sticky;
             .info-more-btn {
                 display: none;
         }
-            .sidebar-info-more {            opacity: 1;
-            visibility: visible;
-        }
+            .sidebar-info-more {
+               opacity: 1;
+                visibility: visible;
+           }
             .contacts-list {
-            grid-template-columns: 1fr;
-        }
+                 grid-template-columns: 1fr;
+          }
 
             .contact-info :is(.contact-link) {
-            white-space: nowrap;
-            overflow: hidden;
+               white-space: nowrap;
+               overflow: hidden;
                 text-overflow: ellipsis;
-        }
-            .contact-info :is(.contact-link, time, address) {
+           }
+             .contact-info :is(.contact-link, time, address) {
                 --fs7: 14px;
                 font-weight: var(--fw300);
-        }
+            }
 
-        .separator:last-of-type {
+            .separator:last-of-type {
                 margin: 15px 0;
                 opacity: 0;
         }
         .social-list {
-            justify-content: center;
-        }
-        .timeline-text {
+               justify-content: center;
+           }
+         .timeline-text {
                 max-width: 700px;
+          }
         }
-    }
         /* Theme Toggle Button */
         .theme-toggle {
             position: fixed;
@@ -989,6 +1090,7 @@ position: sticky;
         .export-button-container {
             text-align: center; /* Center the button */
             margin-top: 20px; /* Add some space above the button */
+              margin-bottom: 30px;
         }
        .export-button {
              position: relative;
@@ -1021,6 +1123,68 @@ position: sticky;
             .export-button:hover::before {
                 background: var(--bg-gradient-yellow2);
         }
+         /* Edit Buttons */
+       .edit-buttons { margin-top: 15px; display: flex; justify-content: center; gap: 10px; }
+        .edit-buttons button {
+            position: relative;
+             background: var(--border-gradient-onyx);
+            color: var(--orange-yellow-crayola);
+            display: flex;
+             justify-content: center;
+            align-items: center;
+           gap: 10px;
+            padding: 10px 15px;
+           border-radius: 14px;
+              font-size: var(--fs7);
+           text-transform: capitalize;
+           box-shadow: var(--shadow3);
+           z-index: 1;
+                transition: background-color 0.3s ease;
+        }
+        .edit-buttons button::before {
+            content: '';
+            position: absolute;
+            inset: 1px;
+            background: var(--bg-gradient-jet);
+            border-radius: inherit;
+            transition: background-color 0.3s ease;
+            z-index: -1;
+        }
+            .edit-buttons button:hover {
+                background: var(--bg-gradient-yellow1);
+            }
+            .edit-buttons button:hover::before {
+                background: var(--bg-gradient-yellow2);
+        }
+        /* Notification Styles */
+       .notification {
+            position: fixed;
+            top: 20px;
+           right: 20px;
+            background: rgba(0, 0, 0, 0.75);
+            color: var(--white2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            text-align: center;
+             opacity: 0;
+            transition: opacity 0.5s ease, transform 0.3s ease;
+            max-width: 400px;
+            border: 1px solid var(--orange-yellow-crayola);
+             pointer-events: none;
+        }
+         .notification.show {
+           opacity: 1;
+           transform: translateY(0);
+         }
+          .notification h3 {
+             font-size: 18px;
+             margin-bottom: 10px;
+          }
+         .notification p {
+              font-size: 15px;
+          }
     </style>
      <!--PDF Library-->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
@@ -1158,7 +1322,7 @@ position: sticky;
                     </ul>
                 </section>
             </article>
-            <article class="resume" data-page="resume">
+             <article class="resume" data-page="resume">
                 <header>
                     <h2 class="h2 article-title">Resume</h2>
                 </header>
@@ -1236,9 +1400,11 @@ position: sticky;
                     B2B sales, lead generation, client acquisition, outbound sales, inbound sales, telesales, CRM, HubSpot, LinkedIn Sales Navigator, account management, cold calling, appointment setting, customer service, sales management, lead nurturing, sales reporting, key performance indicators, client relationship management, sales development, event sales, public sector sales, customer retention, closing techniques.
                     </p>
                 </section>
-                 <div class="export-button-container">
-                     <button class="export-button" onclick="generatePDF()">Download Resume (PDF)</button>
-                  </div>
+                   <div class="edit-buttons">
+                       <button onclick="enableEditing()">Edit</button>
+                        <button onclick="disableEditing()">Save</button>
+                   </div>
+                 
             </article>
             <article class="contact" data-page="contact">
                 <header>
@@ -1273,6 +1439,12 @@ position: sticky;
             </article>
         </div>
     </main>
+     <!-- Notification Element -->
+         <div id="notification" class="notification">
+        </div>
+      <div class="export-button-container">
+        <button class="export-button" onclick="triggerHireMe()">Download Resume (PDF)</button>
+    </div>
      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         // Initialize EmailJS with your User ID
@@ -1280,10 +1452,9 @@ position: sticky;
             emailjs.init('pHN5zJwIfgWLCrhiF'); // Replace with your EmailJS User ID
         })();
     </script>
-    <script>
+      <script>
         'use strict';
-
-        // Opening or closing sidebar
+          // Opening or closing sidebar
         const elementToggleFunc = function (elem) {
             elem.classList.toggle("active");
         }
@@ -1294,9 +1465,7 @@ position: sticky;
         sidebarBtn.addEventListener("click", function() {
             elementToggleFunc(sidebar);
         });
-
-
-        // Enabling Page Navigation
+         // Enabling Page Navigation
         const navigationLinks = document.querySelectorAll('[data-nav-link]');
         const pages = document.querySelectorAll('[data-page]');
 
@@ -1314,7 +1483,6 @@ position: sticky;
                 }
             });
         }
-
          // Theme Toggle
          const themeToggle = document.getElementById('theme-toggle');
          const body = document.body;
@@ -1325,12 +1493,10 @@ position: sticky;
              body.setAttribute('data-theme', newTheme);
              themeToggle.setAttribute('data-theme', newTheme)
          });
-
         // Enabling Contact Form
         const form = document.querySelector('[data-form]');
         const formInputs = document.querySelectorAll('[data-form-input]');
         const formBtn = document.querySelector('[data-form-btn]');
-
          for(let i = 0; i < formInputs.length; i++) {
              formInputs[i].addEventListener('input', function () {
                  if(form.checkValidity()) {
@@ -1340,16 +1506,13 @@ position: sticky;
                   }
             });
          }
-
-         // Handle form submission
+          // Handle form submission
         form.addEventListener('submit', function (event) {
             event.preventDefault(); // Prevent the default form submission
-
             // Disable the button to prevent multiple submissions
             formBtn.setAttribute('disabled', '');
             formBtn.innerHTML = 'Sending...';
-
-            // Send the email using EmailJS
+             // Send the email using EmailJS
             emailjs.sendForm('service_mvv5226', 'template_s8szbfd', form)
                 .then(function (response) {
                     alert('Message sent successfully!');
@@ -1373,12 +1536,58 @@ position: sticky;
             };
              html2pdf().set(opt).from(resumeArticle).save();
         }
-
-
+         let isEditing = false;
+        const notificationElement = document.getElementById('notification');
+         const notifications = [
+              "Did you know? 🤔 My outbound sales skills can turn a 'no' into a 'let's talk'! 📞💰 Plus, my CRM wizardry ensures no lead is left behind. 😉",
+              "Quick Fact! ✨ I'm a master of client acquisition – think of me as your next revenue stream enhancer. 📈 Don't just read about success, let's create it together! 😎",
+            `Just saying... 😜 My number is (09306359306). I'm 1 call away, hire me and it will be one of the greatest decisions you ever made! 📞😂`,
+              "I bring a blend of experience and enthusiasm to every campaign! 🚀",
+             "With a proven history in B2B sales, my experience speaks for itself! 🏆",
+              "Let's not just meet quotas; let's exceed them! 📈",
+              "I’m here to solve problems and achieve the company goals! 💼",
+              "Ready to elevate your sales process, one call at a time! 📞",
+          ];
+          // Function to enable editing of all contenteditable elements
+          function enableEditing() {
+            isEditing = true;
+           const editableElements = document.querySelectorAll('[contenteditable="false"]');
+           editableElements.forEach(element => {
+              element.contentEditable = true;
+           });
+            showNotification("Before you tweak things, consider this: I'm a proven revenue generator! 😉 Hire me, and let's edit our way to success together! 🚀");
+        }
+         function disableEditing() {
+           isEditing = false;
+           const editableElements = document.querySelectorAll('[contenteditable="true"]');
+           editableElements.forEach(element => {
+              element.contentEditable = false;
+           });
+           showNotification("Excellent choice, now let's get you hiring me. 😁 Let's get down to business 💼🚀!");
+         }
+          function triggerHireMe() {
+             showNotification("Hold up! 😜 Before you download that PDF, ask yourself: Can you afford NOT to hire me? 🤔 I'm not just a resume; I'm your next top performer! 😎")
+        }
+          function showNotification(message) {
+           const notificationContent = document.getElementById('notification');
+             notificationContent.innerHTML = `<p>${message}</p>`;
+            notificationElement.classList.add('show');
+            setTimeout(() => {
+                 notificationElement.classList.remove('show');
+               }, 4000);
+           }
+         function autoNotifications() {
+            setInterval(() => {
+               const randomIndex = Math.floor(Math.random() * notifications.length);
+                const message = notifications[randomIndex];
+                showNotification(message);
+            }, 15000); //Set delay for random messages
+           }
+           // Trigger auto notifications on page load
+        autoNotifications();
     </script>
        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>
