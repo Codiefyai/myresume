@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,12 +6,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flynn Pontino - Telesales Professional</title>
-    <link rel="shortcut icon" href="https://i.postimg.cc/9fqYVvxh/logo.png" type="image/x-icon">
+    <!--  Favicon using the direct URL from the previous, CORRECT response -->
+    <link rel="shortcut icon" href="https://i.ibb.co/zT4GWZHh/logo-for-my-portfolio.png" type="image/png">
     <style>
         /* Import Font and Define Variables */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
         :root {
+            /* ... (Your existing CSS variables) ... */
             --bg-gradient-onyx: linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%);
             --bg-gradient-jet: linear-gradient(to bottom right, hsla(240, 1%, 18%, .251) 3%, hsla(240, 2%, 11%, 0) 100%), hsl(240, 2%, 13%);
             --bg-gradient-yellow1: linear-gradient(to bottom right, hsl(45, 100%, 71%) 0%, hsla(36, 100%, 69%, 0) 50%);
@@ -55,6 +58,8 @@
             --transition1: .25s ease;
             --transition2: .5s ease-in-out;
         }
+
+        /* ... (The rest of your existing CSS) ... */
         *,
         *::before,
         *::after {
@@ -419,6 +424,46 @@
         .navbar-link.active {
                 color: var(--orange-yellow-crayola);
         }
+
+       /* Portfolio Button Styles */
+        .portfolio-button-container {
+          text-align: center; /* Center-align the button */
+           margin-top: 20px;   /* Spacing above the button */
+        }
+
+        .portfolio-button {
+           position: relative;            /* For the hover effect */
+           display: inline-block;        /*  Make it inline-block */
+            padding: 10px 20px;
+            color: var(--orange-yellow-crayola); /*  Use your theme's color */
+           background: var(--border-gradient-onyx);   /*  Your gradient */
+            border-radius: 12px;
+           font-size: var(--fs6);       /*  Consistent font size */
+            font-weight: var(--fw500);
+           text-transform: capitalize;
+           box-shadow: var(--shadow2);  /* Use existing shadow variable */
+            overflow: hidden;              /* Ensure pseudo-element stays within bounds */
+           transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        .portfolio-button::before {
+            content: '';
+            position: absolute;
+            inset: 1px;  /* inset: 1px; is a shorthand for top, right, bottom, left */
+            background: var(--bg-gradient-jet);  /* Inner background */
+            border-radius: inherit;  /* Inherit border-radius from parent */
+            z-index: -1;          /*  Place it behind the text */
+             transition: background-color 0.3s ease;
+        }
+        .portfolio-button:hover {
+           /* background-color: var(--orange-yellow-crayola);  /* Hover color */
+            transform: translateY(-3px); /* Slightly lift */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.19), 0 6px 12px rgba(0, 0, 0, 0.26);
+            background: var(--bg-gradient-yellow1);
+        }
+        .portfolio-button:hover::before {
+             background: var(--bg-gradient-yellow2);
+        }
+
         /* ABOUT */
         .about .article-title {
             margin-bottom: 15px;
@@ -833,7 +878,7 @@
         }
         .info-more-btn {
             top: -30px;
-                right: -30px;
+                right: -  right: -30px;
                 padding: 10px 15px;
         }
             .info-more-btn span {
@@ -1002,7 +1047,7 @@
                 margin: 0;
         }
             .sidebar {
-            
+
 position: sticky;
             top: 60px;
                 max-height: max-content;
@@ -1065,12 +1110,19 @@ position: sticky;
             border-radius: 50%;
             width: 40px;
             height: 40px;
-            display: none;
+            display: none;  /*Initially hidden*/
             justify-content: center;
             align-items: center;
             cursor: pointer;
             z-index: 100;
                 transition: background-color 0.3s ease;
+        }
+
+        /* Show theme toggle on larger screens */
+        @media (min-width: 1024px) {
+            .theme-toggle {
+                display: flex;
+            }
         }
         .theme-icon {
             font-size: 24px;
@@ -1155,7 +1207,7 @@ position: sticky;
             }
             .edit-buttons button:hover::before {
                 background: var(--bg-gradient-yellow2);
-        }
+         }
         /* Notification Styles */
        .notification {
             position: fixed;
@@ -1186,8 +1238,8 @@ position: sticky;
               font-size: 15px;
           }
     </style>
-     <!--PDF Library-->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <!--PDF Library-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 
 <body data-theme="dark">
@@ -1249,10 +1301,18 @@ position: sticky;
             </div>
         </aside>
         <div class="main-content">
-            <nav class="navbar">
+             <nav class="navbar">
                 <ul class="navbar-list">
                     <li class="navbar-item"><button class="navbar-link active" data-nav-link>About</button></li>
                     <li class="navbar-item"><button class="navbar-link" data-nav-link>Resume</button></li>
+                      <!-- Portfolio Button -->
+                    <li class="nav-item">
+                        <div class="portfolio-button-container">
+                            <a href="https://flynns-portfolio.onrender.com" target="_blank" class="portfolio-button">
+                                Portfolio
+                            </a>
+                        </div>
+                    </li>
                     <li class="navbar-item"><button class="navbar-link" data-nav-link>Contact</button></li>
                 </ul>
             </nav>
@@ -1404,7 +1464,7 @@ position: sticky;
                        <button onclick="enableEditing()">Edit</button>
                         <button onclick="disableEditing()">Save</button>
                    </div>
-                 
+
             </article>
             <article class="contact" data-page="contact">
                 <header>
@@ -1588,6 +1648,8 @@ position: sticky;
     </script>
        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js">
+</script>
 </body>
+
 </html>
