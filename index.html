@@ -30,10 +30,22 @@
 
         /* --- Industry Tiles --- */
         .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 20px auto; }
-        .industry-tile { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); cursor: pointer; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .industry-tile { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); cursor: pointer; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; /* Added for overlay positioning */ }
         .industry-tile:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0, 0, 0, 0.19), 0 6px 12px rgba(0, 0, 0, 0.26); }
         .industry-tile h3 { margin: 0 0 10px 0; color: #0a66c2; font-size: 1.25em; }
         .industry-tile p { color: #555; font-size: 1em; }
+
+        /* Add an overlay to prevent interaction with tile content */
+        .industry-tile::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1; /* Ensure it's above the content but below the onclick */
+          pointer-events: auto; /*  Make the overlay clickable */
+        }
 
         /* --- Popup Styles --- */
         .industry-popup-overlay { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.5); transition: background-color 0.3s ease; }
@@ -110,7 +122,7 @@
     </div>
 
     <p class="intro">
-        Welcome to my interactive portfolio! ... (rest of intro) ...
+        Welcome to my interactive portfolio! This page demonstrates my ability to research and identify high-quality B2B leads across a variety of industries. Click on any industry tile below to view a sample of potential leads, complete with company names, websites, brief descriptions, the number of businesses targeted during my research, phone numbers, and links to their LinkedIn profiles. This project showcases my skills in using research tools to build targeted prospect lists.
     </p>
 
     <div class="container">
@@ -335,13 +347,12 @@
             processSection.scrollIntoView({ behavior: 'smooth' });
         }
 
-		// Corrected event listener
         window.addEventListener('click', function(event) {
-            // Check if the click target is the overlay itself, *not* its children
-            if (event.target === industryPopupOverlay) {
-                closePopup();
-            }
+          if (event.target == industryPopupOverlay) {
+            closePopup();
+          }
         });
+
     </script>
 </body>
 </html>
