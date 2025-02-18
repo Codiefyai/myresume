@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -126,7 +127,7 @@
     </p>
 
     <div class="container">
-		<div class="industry-tile" onclick="openIndustryPopup('Technology')">
+        <div class="industry-tile" onclick="openIndustryPopup('Technology')">
             <h3>Technology</h3>
             <p>Software, IT, Cloud, AI, etc.</p>
         </div>
@@ -153,6 +154,34 @@
         <div class="industry-tile" onclick="openIndustryPopup('Digital Marketing Agencies')">
             <h3>Digital Marketing</h3>
             <p>SEO, PPC, Social Media, Content Marketing</p>
+        </div>
+        <div class="industry-tile" onclick="openIndustryPopup('Consulting & Coaching')">
+            <h3>Consulting & Coaching</h3>
+            <p>Business Strategy, Leadership, HR Consulting</p>
+        </div>
+        <div class="industry-tile" onclick="openIndustryPopup('BPO')">
+            <h3>BPO</h3>
+            <p>Customer Service, Back Office, Technical Support</p>
+        </div>
+        <div class="industry-tile" onclick="openIndustryPopup('Automotive')">
+            <h3>Automotive</h3>
+            <p>Dealerships, Manufacturers, Auto Parts</p>
+        </div>
+        <div class="industry-tile" onclick="openIndustryPopup('Legal Services')">
+            <h3>Legal Services</h3>
+            <p>Law Firms, Legal Tech, Legal Consulting</p>
+        </div>
+        <div class="industry-tile" onclick="openIndustryPopup('Home Services')">
+            <h3>Home Services</h3>
+            <p>HVAC, Plumbing, Landscaping, Cleaning</p>
+        </div>
+        <div class="industry-tile" onclick="openIndustryPopup('E-commerce & Retail')">
+            <h3>E-commerce & Retail</h3>
+            <p>Online Stores, Retail Chains, Marketplaces</p>
+        </div>
+        <div class="industry-tile" onclick="openIndustryPopup('Event & Entertainment')">
+            <h3>Event & Entertainment</h3>
+            <p>Event Planning, Venues, Entertainment Production</p>
         </div>
     </div>
 
@@ -274,6 +303,55 @@
                 { company: 'Publicis Groupe', website: 'publicisgroupe.com', description: 'Advertising and PR company.', targeted: 700, phone: '+33 (0)1 44 43 70 00', linkedin: 'https://www.linkedin.com/company/publicis-groupe/' },
                 { company: 'Dentsu', website: 'dentsu.com', description: 'Advertising and PR company.', targeted: 650, phone: '+81 3-6217-6601', linkedin: 'https://www.linkedin.com/company/dentsu-inc./' },
                 { company: 'WebFX', website: 'webfx.com', description: 'Full-service digital marketing agency.', targeted: 400, phone: '(888) 601-5359', linkedin: 'https://www.linkedin.com/company/webfx/' }
+            ],
+            'Consulting & Coaching': [
+                { company: 'McKinsey & Company', website: 'mckinsey.com', description: 'Management consulting.', targeted: 800, phone: '(212) 446-7000', linkedin: 'https://www.linkedin.com/company/mckinsey/' },
+                { company: 'Boston Consulting Group', website: 'bcg.com', description: 'Management consulting.', targeted: 750, phone: '(617) 973-1200', linkedin: 'https://www.linkedin.com/company/boston-consulting-group/' },
+                { company: 'Bain & Company', website: 'bain.com', description: 'Management consulting.', targeted: 700, phone: '(646) 562-8000', linkedin: 'https://www.linkedin.com/company/bain-and-company/' },
+                { company: 'Deloitte Consulting', website: 'deloitte.com', description: 'Business consulting services.', targeted: 900, phone: '(212) 492-4000', linkedin: 'https://www.linkedin.com/company/deloitte/' },
+                { company: 'Accenture', website: 'accenture.com', description: 'Strategy and consulting services.', targeted: 850, phone: '(312) 737-8800', linkedin: 'https://www.linkedin.com/company/accenture/' }
+            ],
+            'BPO': [
+                { company: 'Tata Consultancy Services', website: 'tcs.com', description: 'IT services and BPO.', targeted: 1000, phone: '+91 22 6778 9999', linkedin: 'https://www.linkedin.com/company/tata-consultancy-services/' },
+                { company: 'Infosys BPM', website: 'infosysbpm.com', description: 'Business process management.', targeted: 900, phone: '+91 80 2852 0261', linkedin: 'https://www.linkedin.com/company/infosys-bpm/' },
+                { company: 'Genpact', website: 'genpact.com', description: 'Business process outsourcing.', targeted: 850, phone: '(212) 885-6000', linkedin: 'https://www.linkedin.com/company/genpact/' },
+                                { company: 'Wipro BPO', website: 'wipro.com', description: 'Business process services.', targeted: 800, phone: '+91 80 2844 0011', linkedin: 'https://www.linkedin.com/company/wipro-bpo/' },
+                { company: 'Concentrix', website: 'concentrix.com', description: 'Customer engagement services.', targeted: 750, phone: '(510) 259-4000', linkedin: 'https://www.linkedin.com/company/concentrix/' }
+            ],
+            'Automotive': [
+                { company: 'Toyota', website: 'toyota.com', description: 'Automobile manufacturer.', targeted: 950, phone: '(800) 331-4331', linkedin: 'https://www.linkedin.com/company/toyota-motor-corporation/' },
+                { company: 'Ford Motor Company', website: 'ford.com', description: 'Automobile manufacturer.', targeted: 900, phone: '(313) 322-3000', linkedin: 'https://www.linkedin.com/company/ford-motor-company/' },
+                { company: 'General Motors', website: 'gm.com', description: 'Automobile manufacturer.', targeted: 850, phone: '(313) 556-5000', linkedin: 'https://www.linkedin.com/company/general-motors/' },
+                { company: 'Tesla, Inc.', website: 'tesla.com', description: 'Electric vehicle manufacturer.', targeted: 800, phone: '(650) 681-5000', linkedin: 'https://www.linkedin.com/company/tesla-motors/' },
+                { company: 'BMW Group', website: 'bmwgroup.com', description: 'Automobile and motorcycle manufacturer.', targeted: 750, phone: '+49 89 3820', linkedin: 'https://www.linkedin.com/company/bmwgroup/' }
+            ],
+            'Legal Services': [
+                { company: 'Latham & Watkins LLP', website: 'lw.com', description: 'International law firm.', targeted: 700, phone: '(213) 485-1234', linkedin: 'https://www.linkedin.com/company/latham-&-watkins/' },
+                { company: 'Kirkland & Ellis LLP', website: 'kirkland.com', description: 'International law firm.', targeted: 650, phone: '(312) 862-2000', linkedin: 'https://www.linkedin.com/company/kirkland-&-ellis-llp/' },
+                { company: 'DLA Piper', website: 'dlapiper.com', description: 'Global law firm.', targeted: 600, phone: '+44 (0) 8700 111 111', linkedin: 'https://www.linkedin.com/company/dla-piper/' },
+                { company: 'Baker McKenzie', website: 'bakermckenzie.com', description: 'Global law firm.', targeted: 550, phone: '(312) 861-8800', linkedin: 'https://www.linkedin.com/company/baker-mckenzie/' },
+                { company: 'Skadden, Arps, Slate, Meagher & Flom LLP', website: 'skadden.com', description: 'International law firm.', targeted: 500, phone: '(212) 735-3000', linkedin: 'https://www.linkedin.com/company/skadden-arps/' }
+            ],
+            'Home Services': [
+                { company: 'HomeAdvisor', website: 'homeadvisor.com', description: 'Home services marketplace.', targeted: 600, phone: '(877) 800-3177', linkedin: 'https://www.linkedin.com/company/homeadvisor/' },
+                { company: 'Angie\'s List', website: 'angieslist.com', description: 'Home services reviews.', targeted: 550, phone: '(888) 888-5478', linkedin: 'https://www.linkedin.com/company/angi-leads/' },
+                { company: 'Servpro', website: 'servpro.com', description: 'Restoration and cleaning services.', targeted: 500, phone: '(800) 737-8776', linkedin: 'https://www.linkedin.com/company/servproindustries/' },
+                { company: 'TruGreen', website: 'trugreen.com', description: 'Lawn care services.', targeted: 450, phone: '(866) 688-6722', linkedin: 'https://www.linkedin.com/company/trugreen/' },
+                { company: 'Terminix', website: 'terminix.com', description: 'Pest control services.', targeted: 400, phone: '(866) 844-3844', linkedin: 'https://www.linkedin.com/company/terminix/' }
+            ],
+            'E-commerce & Retail': [
+                { company: 'Amazon', website: 'amazon.com', description: 'E-commerce and cloud services.', targeted: 1000, phone: '(206) 266-1000', linkedin: 'https://www.linkedin.com/company/amazon/' },
+                { company: 'Walmart', website: 'walmart.com', description: 'Retail corporation.', targeted: 950, phone: '(800) 925-6278', linkedin: 'https://www.linkedin.com/company/walmart/' },
+                { company: 'Target', website: 'target.com', description: 'Retail corporation.', targeted: 900, phone: '(800) 440-0680', linkedin: 'https://www.linkedin.com/company/target/' },
+                { company: 'Best Buy', website: 'bestbuy.com', description: 'Consumer electronics retailer.', targeted: 850, phone: '(888) 237-8289', linkedin: 'https://www.linkedin.com/company/best-buy/' },
+                { company: 'Shopify', website: 'shopify.com', description: 'E-commerce platform.', targeted: 800, phone: '(888) 746-7439', linkedin: 'https://www.linkedin.com/company/shopify/' }
+            ],
+            'Event & Entertainment': [
+                { company: 'Live Nation Entertainment', website: 'livenationentertainment.com', description: 'Event promotion and venue operation.', targeted: 700, phone: '(310) 867-7000', linkedin: 'https://www.linkedin.com/company/live-nation-entertainment/' },
+                { company: 'AEG Presents', website: 'aegpresents.com', description: 'Concert promotion and venue management.', targeted: 650, phone: '(213) 742-7100', linkedin: 'https://www.linkedin.com/company/aeg-presents/' },
+                { company: 'Cvent', website: 'cvent.com', description: 'Event management software.', targeted: 600, phone: '(866) 318-4358', linkedin: 'https://www.linkedin.com/company/cvent/' },
+                { company: 'Eventbrite', website: 'eventbrite.com', description: 'Event ticketing and management.', targeted: 550, phone: '(800) 350-8850', linkedin: 'https://www.linkedin.com/company/eventbrite/' },
+                { company: 'Ticketmaster', website: 'ticketmaster.com', description: 'Ticket sales and distribution.', targeted: 500, phone: '(800) 653-8000', linkedin: 'https://www.linkedin.com/company/ticketmaster/' }
             ]
         };
 
