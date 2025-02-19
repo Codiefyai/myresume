@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Added shrink-to-fit -->
     <meta name="theme-color" content="#001c41">
     <meta name="msapplication-navbutton-color" content="#001c41">
     <meta name="apple-mobile-web-app-status-bar-style" content="#001c41">
@@ -20,14 +22,149 @@
     })(window,document,'script','dataLayer','GTM-MLX65VM8');</script>
     <!-- End Google Tag Manager -->
     <!-- Styles -->
-    <link href="https://careers.hgsoss.com/css/app.css" rel="stylesheet">
-    <link href="https://careers.hgsoss.com/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://careers.hgsoss.com/css/jquery-ui.min.css%20" rel="stylesheet">
+    <!-- Using Bootstrap 5.3 and Font Awesome 6 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+
+      rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+
+      crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+
+      crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!--  <link href="https://careers.hgsoss.com/css/jquery-ui.min.css%20" rel="stylesheet"> -->
+    <!-- Removed direct reference to external jquery-ui CSS, relying on bootstrap -->
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="https://i.ibb.co/zT4GWZHh/logo-for-my-portfolio.png">
-    <!-- Google Translate -->
+    <!-- Inline CSS for Custom Styles (Best for single page) -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif; /* More common font */
+            background-color: #f8f9fa; /* Light background */
+            color: #343a40;
+        }
+        h1, h2, h3, h4, h5 {
+            color: #001c41; /* Consistent heading color */
+        }
+        a {
+            color: #007bff; /* Bootstrap primary color */
+            text-decoration: none; /* Remove underlines by default */
+        }
+        a:hover {
+            text-decoration: underline; /* Add underline on hover */
+        }
+        .container {
+          max-width: 960px; /*  limit the width */
+        }
+
+        /* Profile Section */
+        #profile-section {
+            padding: 20px 0;
+            background-color: white;
+            border-radius: 8px;  /* Rounded corners */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow */
+            margin-bottom: 20px;
+        }
+
+        .profile-wrapper {
+            border: none; /* Remove default panel border */
+        }
+        .profile-photo-wrapper {
+            text-align: center;
+            margin-bottom: 20px; /* Space below photo */
+        }
+        .profile-photo-wrapper img {
+            max-width: 150px; /*  image size */
+            border-radius: 50%; /* Circular image */
+            border: 3px solid #001c41; /* Border around image */
+            display: block; /*  for margin auto to work */
+            margin: 0 auto 10px;
+        }
+        .fileinput-button {
+          margin-top: 10px;
+        }
+
+        /* Qualifications, Skills, Experience, Education */
+        .profile-content {
+            margin-bottom: 30px;
+        }
+        .profile-content h2 {
+            margin-bottom: 15px;
+            border-bottom: 2px solid #001c41; /* Underline section titles */
+            padding-bottom: 5px;
+        }
+        .qualifications-text, .company-desc {
+          font-size: 1rem; /*  font size for readability */
+          line-height: 1.6;
+        }
+        .skill-item {
+            margin-bottom: 20px;
+        }
+        .skill-name {
+            font-weight: bold;
+        }
+        .skill-level {
+            height: 10px;
+            background-color: #e9ecef; /* Light grey background */
+            border-radius: 5px;
+            margin-bottom: 5px;
+        }
+        .skill-level div {
+            height: 100%;
+            background-color: #28a745; /* Green for progress */
+            border-radius: 5px;
+        }
+        .skill-comment {
+          width: 100%;
+          resize: none; /* Prevent resizing */
+          border: 1px solid #ced4da; /*  border */
+          border-radius: 4px;
+          padding: 0.375rem 0.75rem;
+          font-size: 1rem;
+          line-height: 1.5;
+
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 30px;
+            padding-left: 15px; /* Indent experience items */
+            border-left: 2px solid #001c41; /* Vertical line for timeline */
+        }
+        .experience-content{
+           margin-bottom: 0.5rem;
+        }
+        .company-name {
+            font-style: italic;
+        }
+        .inclusive-date {
+            color: #6c757d; /* Grey color for dates */
+        }
+        .experience-details ul {
+            list-style: disc; /*  bullets */
+            padding-left: 20px;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #001c41;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 20px; /* Space above footer */
+        }
+
+    </style>
   </head>
   <body>
+    <!-- Google Translate -->
     <div id="google_translate_element"></div>
     <script type="text/javascript">
     function googleTranslateElementInit() {
@@ -40,134 +177,97 @@
 
 style="display:none;visibility:hidden" height="0" width="0"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
-    <link href="https://careers.hgsoss.com/css/style.css" rel="stylesheet">
-    <!--  <link rel="icon" type="image/png" href="https://careers.hgsoss.com/images/favicon.png">  Removing the old favicon -->
-    <script type="text/javascript" src="https://careers.hgsoss.com/js/jquery-1.12.3.min.js?v=1739871078"></script>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TQJB38N"
-
-style="display:none;visibility:hidden" height="0" width="0"></iframe></noscript>
     <div id="app">
       <section id="profile-section">
         <div class="container">
           <h1>My Resume</h1>
           <div class="panel panel-default profile-wrapper">
             <div class="panel-content ">
-              <div class="row profile-content"> <i class="fa fa-pencil-square-o crud-icon crud-edit"
-
-                  aria-hidden="true" data-record="45977" data-path="/account/profile"
-
-                  data-title="Personal Details" data-target="popup" data-classname="modal-800"></i>
+              <div class="row profile-content">
+                <!--  Edit Icon (removed for now, add back if needed with proper JS) -->
                 <div class="col-sm-4 col-md-3">
-                  <div class="profile-photo-wrapper"> <input name="_token" value="sr09hb6jxhJdXP6MU02n1kpIzj1tiftFOWBHBaQT"
+                  <div class="profile-photo-wrapper"> <img src="https://i.ibb.co/MySFwBZ6/Flynn-2x2.jpg"
 
-                      type="hidden"> <input name="user_id" value="48289" type="hidden">
-                    <img src="https://i.ibb.co/MySFwBZ6/Flynn-2x2.jpg"><span class="btn btn-success fileinput-button"><span>Telemarketing
-                        Rockstar</span> </span> </div>
+                      alt="Flynn James Q. Pontino"> <span class="btn btn-success fileinput-button">Telemarketing
+                      Rockstar</span> </div>
                 </div>
                 <div class="col-sm-8 col-md-9">
                   <h2>Flynn James Q. Pontino</h2>
                   <h3 class="my-profile-content">Sales Development
                     Representative / Lead Generation Specialist</h3>
-                  <p data-pm-slice="0 0 []">Toledo, Central Visayas, Cebu
-                    Philippines</p>
-                  <p class="my-profile-content"></p>
-                  <p class="my-profile-content"><br>
-                  </p>
-                  <p><br>
-                  </p>
-                  <p><b>My website: </b><u><a href="https://flynnjames-resume.onrender.com">aboutflynn</a></u><b><br>
-                    </b></p>
-                  <p><b>LinkedIn: </b><u><a href="https://www.linkedin.com/in/fjpontino">mylinkedin</a></u><b><br>
-                    </b></p>
-                  <p><b>Whats app #: </b>9306359306<a href="flynnjamespontinos-portfolio.onrender.com"></a></p>
-                  <p><b>Email: </b> jamescarbelledo@gmail.com</p>
+                  <p>Toledo, Central Visayas, Cebu Philippines</p>
+                  <p><b>My website:</b> <a href="https://flynnjames-resume.onrender.com">aboutflynn</a></p>
+                  <p><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/fjpontino">mylinkedin</a></p>
+                  <p><b>Whats app #:</b> 9306359306</p>
+                  <!--  Added tel: for click-to-call -->
+                  <p><b>Email:</b> <a href="mailto:jamescarbelledo@gmail.com">jamescarbelledo@gmail.com</a></p>
+                  <!--  mailto: -->
                   <div id="upload-resume-wrapper" class="upload-resume-wrapper">
-                    <input name="_token" value="sr09hb6jxhJdXP6MU02n1kpIzj1tiftFOWBHBaQT"
+                    <a href="https://flynns-portfolio.onrender.com" target="_top"
 
-                      type="hidden"> <input name="user_id" value="48289" type="hidden">
-                    <input name="id" value="45977" type="hidden"> <a href="https://flynns-portfolio.onrender.com"
-
-                      target="_top"><span class="btn btn-success fileinput-button"><span>Click
-                          Interactive Portfolio<span style="color: #222222;"></span></span>
-                      </span></a><span style="color: black;">
-                      <script type="text/javascript">
-				$(document).ready(function(){
-					fileChangeFunc = function(event){
-						if(files){
-							confirmRemoveResume();	
-						}else{
-							confirmPopup({title:'Confirm Delete', message:'Are you sure you want to delete your uploaded resume?', confirmCallback: confirmRemoveResume});
-						}
-					}
-				});
-				
-				function confirmRemoveResume(){
-					crudRecordSave('/account/profile/resume', 0, '', null, '#upload-resume-wrapper','/account/profile');
-				}
-				</script> </span></div>
-                  <span style="color: black;"> </span></div>
-                <span style="color: black;"> </span></div>
-               <a href="https://flynns-portfolio.onrender.com"></a><a
-
-                href="https://flynns-portfolio.onrender.com" target="_top"></a>
+                      class="btn btn-success fileinput-button"> Click
+                      Interactive Portfolio </a> </div>
+                </div>
+              </div>
               <div class="row profile-content">
                 <h2>Qualifications</h2>
-                <div> <br>
-                  <p class="qualifications-text"></p>
-                  <ul>
-                    <li>B2B Sales &amp; Lead Generation:</li>
-                    <li>Over 8 years of experience in generating leads, managing
-                      client accounts, and converting prospects using LinkedIn
-                      Sales Navigator and HubSpot.</li>
-                    <br>
-                    <li>Event &amp; Client Acquisition:</li>
-                    <li>Successful in driving attendance for high-value events
-                      and building lasting client relationships, contributing to
-                      event success in both the Australian and US public
-                      sectors.</li>
-                    <br>
-                    <li>CRM Proficiency:</li>
-                    <li>Advanced in using HubSpot CRM for lead tracking, client
-                      database management, and weekly reporting to stakeholders.</li>
-                    <br>
-                    <li>Sales &amp; Team Leadership:</li>
-                    <li>Led sales teams, organized client meetings, and ensured
-                      sales campaigns met targets. Skilled in cold calling,
-                      appointment setting, and overcoming objections.</li>
-                    <br>
-                    <li>Key Achievements:</li>
-                    <li>Consistently met sales targets, improved processes, and
-                      maintained positive client relationships, contributing to
-                      business growth and successful events.</li>
+                <div>
+                  <ul class="mb-0">
+                    <!-- Removed extra <br> and <p> tags -->
+                    <li><b>B2B Sales &amp; Lead Generation:</b> Over 8 years of
+                      experience in generating leads, managing client accounts,
+                      and converting prospects using LinkedIn Sales Navigator
+                      and HubSpot.</li>
+                    <li><b>Event &amp; Client Acquisition:</b> Successful in
+                      driving attendance for high-value events and building
+                      lasting client relationships, contributing to event
+                      success in both the Australian and US public sectors.</li>
+                    <li><b>CRM Proficiency:</b> Advanced in using HubSpot CRM
+                      for lead tracking, client database management, and weekly
+                      reporting to stakeholders.</li>
+                    <li><b>Sales &amp; Team Leadership:</b> Led sales teams,
+                      organized client meetings, and ensured sales campaigns met
+                      targets. Skilled in cold calling, appointment setting, and
+                      overcoming objections.</li>
+                    <li><b>Key Achievements:</b> Consistently met sales targets,
+                      improved processes, and maintained positive client
+                      relationships, contributing to business growth and
+                      successful events.</li>
                   </ul>
-                  <p></p>
                 </div>
               </div>
               <div class="row profile-content">
                 <h2>Skills</h2>
-                <div class="skill-item"> <i class="fa fa-pencil-square-o crud-icon crud-edit"
-
-                    aria-hidden="true" data-record="45977" data-path="/account/profile/45977/skills"
-
-                    data-title="Skills" data-target="popup" data-classname="modal-800"></i>
+                <div class="skill-item">
                   <div class="row">
                     <div class="col-sm-4 col-md-3">
                       <div class="skill-name">HubSpot CRM</div>
                       <div class="skill-level">
-                        <div style="width:180px ">9</div>
-                      </div>
+                        <div style="width:90%">&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;
+                          &nbsp;&nbsp; </div>
+                        <!-- Use percentages for responsive width --> </div>
                     </div>
-                    <div class="col-sm-8 col-md-9"> <textarea rows="2" cols="1"
+                    <div class="col-sm-8 col-md-9"> <textarea rows="2"
 
-class="skill-comment" readonly="readonly">Proficient in lead tracking, database management, and reporting for B2B sales and client acquisition.</textarea>
+cols="1" class="skill-comment" readonly="readonly">Proficient in lead tracking, database management, and reporting for B2B sales and client acquisition.</textarea>
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-sm-4 col-md-3">
                       <div class="skill-name">LinkedIn Sales Navigator</div>
                       <div class="skill-level">
-                        <div style="width:160px ">8</div>
-                      </div>
+                        <div style="width:80%">&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; </div>
+                        <!-- Use percentages for responsive width --> </div>
                     </div>
                     <div class="col-sm-8 col-md-9"> <textarea rows="2" cols="1"
 
@@ -178,8 +278,9 @@ class="skill-comment" readonly="readonly">Skilled in identifying and engaging po
                     <div class="col-sm-4 col-md-3">
                       <div class="skill-name">Salesforce</div>
                       <div class="skill-level">
-                        <div style="width:140px ">7</div>
-                      </div>
+                        <div style="width:70%"><br>
+                        </div>
+                        <!-- Use percentages for responsive width --> </div>
                     </div>
                     <div class="col-sm-8 col-md-9"> <textarea rows="2" cols="1"
 
@@ -190,8 +291,9 @@ class="skill-comment" readonly="readonly">Experienced in using Salesforce for CR
                     <div class="col-sm-4 col-md-3">
                       <div class="skill-name">Email Marketing Tools</div>
                       <div class="skill-level">
-                        <div style="width:160px ">8</div>
-                      </div>
+                        <div style="width:80%"><br>
+                        </div>
+                        <!-- Use percentages for responsive width --> </div>
                     </div>
                     <div class="col-sm-8 col-md-9"> <textarea rows="2" cols="1"
 
@@ -202,8 +304,9 @@ class="skill-comment" readonly="readonly">Strong background in using tools like 
                     <div class="col-sm-4 col-md-3">
                       <div class="skill-name">Cold Calling</div>
                       <div class="skill-level">
-                        <div style="width:180px ">9</div>
-                      </div>
+                        <div style="width:90%"><br>
+                        </div>
+                        <!-- Use percentages for responsive width --> </div>
                     </div>
                     <div class="col-sm-8 col-md-9"> <textarea rows="2" cols="1"
 
@@ -214,8 +317,9 @@ class="skill-comment" readonly="readonly">Expertise in initiating calls, overcom
                     <div class="col-sm-4 col-md-3">
                       <div class="skill-name">Lead Generation</div>
                       <div class="skill-level">
-                        <div style="width:180px ">9</div>
-                      </div>
+                        <div style="width:90%"><br>
+                        </div>
+                        <!-- Use percentages for responsive width --> </div>
                     </div>
                     <div class="col-sm-8 col-md-9"> <textarea rows="2" cols="1"
 
@@ -226,8 +330,9 @@ class="skill-comment" readonly="readonly">Extensive experience in B2B and B2C le
                     <div class="col-sm-4 col-md-3">
                       <div class="skill-name">Appointment Setting</div>
                       <div class="skill-level">
-                        <div style="width:160px ">8</div>
-                      </div>
+                        <div style="width:80%"><br>
+                        </div>
+                        <!-- Use percentages for responsive width --> </div>
                     </div>
                     <div class="col-sm-8 col-md-9"> <textarea rows="2" cols="1"
 
@@ -238,8 +343,9 @@ class="skill-comment" readonly="readonly">Skilled in scheduling appointments, en
                     <div class="col-sm-4 col-md-3">
                       <div class="skill-name">Client Relationship Management</div>
                       <div class="skill-level">
-                        <div style="width:180px ">9</div>
-                      </div>
+                        <div style="width:90%"><br>
+                        </div>
+                        <!-- Use percentages for responsive width --> </div>
                     </div>
                     <div class="col-sm-8 col-md-9"> <textarea rows="2" cols="1"
 
@@ -250,8 +356,9 @@ class="skill-comment" readonly="readonly">Strong track record of building and ma
                     <div class="col-sm-4 col-md-3">
                       <div class="skill-name">Sales Reporting &amp; KPIs</div>
                       <div class="skill-level">
-                        <div style="width:160px ">8</div>
-                      </div>
+                        <div style="width:80%"><br>
+                        </div>
+                        <!-- Use percentages for responsive width --> </div>
                     </div>
                     <div class="col-sm-8 col-md-9"> <textarea rows="2" cols="1"
 
@@ -262,79 +369,60 @@ class="skill-comment" readonly="readonly">Experienced in preparing detailed sale
                     <div class="col-sm-4 col-md-3">
                       <div class="skill-name">Event Sales</div>
                       <div class="skill-level">
-                        <div style="width:140px ">7</div>
+                        <div style="width:70%"><br>
+                        </div>
                       </div>
                     </div>
-                    <div class="col-sm-8 col-md-9"> <textarea rows="2" cols="1"
+                    <div class="col-sm-8 col-md-9"> <textarea rows="2" class="skill-comment"
 
-class="skill-comment" readonly="readonly">Adept in generating leads for events, managing client outreach, and securing high-value attendees.</textarea>
+readonly="readonly">Adept in generating leads for events, managing client outreach, and securing high-value attendees.</textarea>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="row profile-content"> <br>
+              <div class="row profile-content">
                 <h2>Experience</h2>
                 <div class="experience-item">
                   <h3 class="experience-content">Delegate Sales Acquisition</h3>
-                  <br>
                   <p class="inclusive-date">November 2022 - January 2025</p>
                   <div class="company-details">
                     <h4 class="experience-content company-name">Public Sector
                       Network Australian &amp; US</h4>
-                    <p data-start="0" data-end="236">Public Sector Network
-                      connects government organizations globally, fostering
-                      collaboration, knowledge sharing, </p>
-                    <p data-start="0" data-end="236">and innovation. It operates
-                      as a social learning platform, helping governments break
-                      down silos for better citizen </p>
-                    <p data-start="0" data-end="236">outcomes.</p>
-                    <p data-start="238" data-end="479">In Australia, it hosts
-                      events like the <strong data-start="277" data-end="307">Federal
-                        Data &amp; AI Showcase</strong> (Dec 5, 2024, in
-                      Canberra) to advance AI adoption</p>
-                    <p data-start="481" data-end="611" data-is-last-node=""> in
-                      the public sector. It also has a presence in the U.S.,
-                      facilitating collaboration among public sector
-                      professionals. </p>
-                    <p data-start="481" data-end="611" data-is-last-node="">Through
-                      tailored content, events, and networking opportunities,
-                      Public Sector Network supports governments in </p>
-                    <p data-start="481" data-end="611" data-is-last-node="">building
-                      the future.</p>
-                    <p data-start="481" data-end="611" data-is-last-node=""><br>
-                    </p>
-                    <p class="company-desc"></p>
-                    <p class="company-website">https://publicsectornetwork.com/</p>
+                    <p class="company-desc">Public Sector Network connects
+                      government organizations globally, fostering
+                      collaboration, knowledge sharing, and innovation. It
+                      operates as a social learning platform, helping
+                      governments break down silos for better citizen outcomes.</p>
+                    <p class="company-desc">In Australia, it hosts events like
+                      the <strong>Federal Data &amp; AI Showcase</strong> (Dec
+                      5, 2024, in Canberra) to advance AI adoption in the public
+                      sector. It also has a presence in the U.S., facilitating
+                      collaboration among public sector professionals.</p>
+                    <p class="company-desc">Through tailored content, events,
+                      and networking opportunities, Public Sector Network
+                      supports governments in building the future.</p>
+                    <p class="company-website"><a href="https://publicsectornetwork.com/">https://publicsectornetwork.com/</a></p>
                   </div>
                   <div class="experience-details">
                     <h5>Responsibilities</h5>
-                    <p></p>
-                    <ul data-start="191" data-end="890">
-                      <li data-start="191" data-end="274">Led outreach via
-                        email, phone, and meetings to secure high-value event
-                        attendees.</li>
-                      <li data-start="275" data-end="367">Nurtured leads using
-                        LinkedIn Sales Navigator and HubSpot CRM, ensuring
-                        timely follow-ups.</li>
-                      <li data-start="368" data-end="437">Built and maintained
-                        strong client relationships for event success.</li>
-                      <li data-start="438" data-end="525">Developed tailored
-                        outreach strategies and event promotions to attract key
-                        delegates.</li>
-                      <li data-start="526" data-end="611">Managed client
-                        communications and lead status in HubSpot CRM for
-                        accurate tracking.</li>
-                      <li data-start="612" data-end="709">Provided weekly
-                        reports on lead generation progress, event outcomes, and
-                        areas for improvement.</li>
-                      <li data-start="710" data-end="807">Analyzed market trends
-                        and competitor activities to identify new lead
-                        generation opportunities.</li>
-                      <li data-start="808" data-end="890">Achieved high lead
-                        conversion rates by addressing prospect needs and
-                        objections.</li>
+                    <ul>
+                      <li>Led outreach via email, phone, and meetings to secure
+                        high-value event attendees.</li>
+                      <li>Nurtured leads using LinkedIn Sales Navigator and
+                        HubSpot CRM, ensuring timely follow-ups.</li>
+                      <li>Built and maintained strong client relationships for
+                        event success.</li>
+                      <li>Developed tailored outreach strategies and event
+                        promotions to attract key delegates.</li>
+                      <li>Managed client communications and lead status in
+                        HubSpot CRM for accurate tracking.</li>
+                      <li>Provided weekly reports on lead generation progress,
+                        event outcomes, and areas for improvement.</li>
+                      <li>Analyzed market trends and competitor activities to
+                        identify new lead generation opportunities.</li>
+                      <li>Achieved high lead conversion rates by addressing
+                        prospect needs and objections.</li>
                     </ul>
-                    <p></p>
                     <h5>Key achievements</h5>
                     <p>Secured high-value event attendees, contributing to
                       successful events in 2021 and 2023.<br>
@@ -360,53 +448,39 @@ class="skill-comment" readonly="readonly">Adept in generating leads for events, 
                   <h3 class="experience-content">Client Acquisition Manager |
                     Sales Development Rep | Lead Generation Specialist |
                     Delegate Sales Rep</h3>
-                  <br>
                   <p class="inclusive-date">March 2015 - January 2022</p>
                   <div class="company-details">
                     <h4 class="experience-content company-name">Pacific
                       Outsource Teleservices</h4>
                     <p class="company-desc">Appointment Setter: Key
                       Qualifications &amp; Responsibilities</p>
-                    <p class="company-desc"><br>
-                    </p>
                     <p class="company-desc">A leading Philippine-based provider
                       of high performance lead generation and telemarketing
-                      services. They help</p>
-                    <p class="company-desc"> companies of all sizes to lower
-                      their cost of acquisition, increase sales, and build
-                      longer, stronger as well as </p>
-                    <p class="company-desc">more profitable customer
+                      services. They help companies of all sizes to lower their
+                      cost of acquisition, increase sales, and build longer,
+                      stronger as well as more profitable customer
                       relationships.</p>
-                    <p class="company-desc"><br>
-                    </p>
-                    <p class="company-website">https://www.pacificoutsourceteleservices.com</p>
+                    <p class="company-website"><a href="https://www.pacificoutsourceteleservices.com">https://www.pacificoutsourceteleservices.com</a></p>
                   </div>
                   <div class="experience-details">
                     <h5>Responsibilities</h5>
-                    <p></p>
-                    <p data-start="218" data-end="241"> </p>
-                    <ul data-start="242" data-end="582">
-                      <li data-start="242" data-end="314">Managed client
-                        accounts, lead generation, and relationship building.</li>
-                      <li data-start="315" data-end="394">Organized meetings and
-                        outreach for regional companies and event promotion.</li>
-                      <li data-start="395" data-end="481">Identified and
-                        contacted potential clients, scheduling follow-ups with
-                        sales reps.</li>
-                      <li data-start="482" data-end="550">Overcame objections
-                        and maintained a positive client experience.</li>
-                      <li data-start="551" data-end="582">Consistently met
-                        weekly KPIs.</li>
+                    <ul>
+                      <li>Managed client accounts, lead generation, and
+                        relationship building.</li>
+                      <li>Organized meetings and outreach for regional companies
+                        and event promotion.</li>
+                      <li>Identified and contacted potential clients, scheduling
+                        follow-ups with sales reps.</li>
+                      <li>Overcame objections and maintained a positive client
+                        experience.</li>
+                      <li>Consistently met weekly KPIs.</li>
                     </ul>
-                    <p></p>
                     <h5>Key achievements</h5>
                     <p>Appointment Setter:<br>
-                      <br>
                       Improved lead generation and exceeded KPIs.<br>
                       Built strong client relationships, contributing to overall
                       team success.<br>
                       Delegate Acquisition Executive (Event):<br>
-                      <br>
                       Secured high-value event attendees, maintaining lasting
                       client relationships.<br>
                       Enhanced lead tracking and reporting in HubSpot CRM.</p>
@@ -425,35 +499,28 @@ class="skill-comment" readonly="readonly">Adept in generating leads for events, 
                 <div class="experience-item">
                   <h3 class="experience-content">Sales | Customer Service
                     Representative</h3>
-                  <br>
                   <p class="inclusive-date">September 2014 - September 2015</p>
                   <div class="company-details">
                     <h4 class="experience-content company-name">Global Empire
                       Corporation</h4>
                     <p class="company-desc">A leading company in sales and
                       customer service, dedicated to delivering exceptional
-                      client support and </p>
-                    <p class="company-desc">achieving business growth through
+                      client support and achieving business growth through
                       high-performance sales strategies.</p>
-                    <p class="company-website">https://globalempire.com</p>
+                    <p class="company-website"><a href="https://globalempire.com">https://globalempire.com</a></p>
                   </div>
                   <div class="experience-details">
                     <h5>Responsibilities</h5>
-                    <p></p>
-                    <p data-start="505" data-end="528"> </p>
-                    <ul data-start="529" data-end="870">
-                      <li data-start="529" data-end="618">Engage with customers
-                        to provide product knowledge, support, and tailored
-                        solutions.</li>
-                      <li data-start="619" data-end="700">Consistently exceeded
-                        sales quotas and contributed to overall revenue growth.</li>
-                      <li data-start="701" data-end="789">Addressed customer
-                        inquiries and resolved issues efficiently to ensure
-                        satisfaction.</li>
-                      <li data-start="790" data-end="870">Maintained accurate
-                        records of customer interactions and sales transactions.</li>
+                    <ul>
+                      <li>Engage with customers to provide product knowledge,
+                        support, and tailored solutions.</li>
+                      <li>Consistently exceeded sales quotas and contributed to
+                        overall revenue growth.</li>
+                      <li>Addressed customer inquiries and resolved issues
+                        efficiently to ensure satisfaction.</li>
+                      <li>Maintained accurate records of customer interactions
+                        and sales transactions.</li>
                     </ul>
-                    <p></p>
                     <h5>Key achievements</h5>
                     <p>Ranked among the top-performing sales agents, surpassing
                       60%, 80%, and 100% of sales targets.<br>
@@ -470,7 +537,7 @@ class="skill-comment" readonly="readonly">Adept in generating leads for events, 
                   </div>
                 </div>
               </div>
-              <div class="row profile-content last"> <br>
+              <div class="row profile-content last">
                 <h2>Education</h2>
                 <div class="education-item">
                   <h3>BS Electrical Engineering</h3>
@@ -485,33 +552,40 @@ class="skill-comment" readonly="readonly">Adept in generating leads for events, 
     </div>
     <footer class="no-print">
       <div class="container">
-        <p style="text-align:center; padding:5px;">Copyright © 2025 Flynn James
-          Pontino RESUME. All rights reserved.</p>
+        <p>Copyright © 2025 Flynn James Pontino RESUME. All rights reserved.</p>
       </div>
     </footer>
     <!-- Scripts -->
-    <script type="text/javascript" src="https://careers.hgsoss.com/js/app.js"></script>
-    <script type="text/javascript" src="https://careers.hgsoss.com/js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="https://careers.hgsoss.com/js/vendor/tinymce/tinymce.min.js"></script>
-    <script type="text/javascript" src="https://careers.hgsoss.com/js/jquery.sha1.js"></script>
-    <script type="text/javascript" src="https://careers.hgsoss.com/js/main-init.js"></script>
-    <script type="text/javascript" src="https://careers.hgsoss.com/js/utils.js"></script>
-    <script type="text/javascript" src="https://careers.hgsoss.com/js/jquery.blockUI.js"></script>
-    <script type="text/javascript" src="https://careers.hgsoss.com/js/bootpopup.js"></script>
-    <script type="text/javascript" src="https://careers.hgsoss.com/js/moment-2.18.1.min.js"></script>
-    <script type="text/javascript" src="https://careers.hgsoss.com/js/bootstrap-datetimepicker.js"></script>
+    <!-- Bootstrap 5 JS (Bundle includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+
+crossorigin="anonymous"></script>
+    <!--  jQuery (Use a version compatible with your other scripts)-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+
+crossorigin="anonymous"></script>
+    <!--  <script type="text/javascript" src="https://careers.hgsoss.com/js/jquery-ui.min.js"></script>  Removed, Bootstrap 5 doesn't need it-->
+    <!--  <script type="text/javascript" src="https://careers.hgsoss.com/js/vendor/tinymce/tinymce.min.js"></script> Removed tinymce, as it is not used-->
+    <!-- <script type="text/javascript" src="https://careers.hgsoss.com/js/jquery.sha1.js"></script>  -->
+    <!-- <script type="text/javascript" src="https://careers.hgsoss.com/js/main-init.js"></script>     Commented Out as these are not present in the file and looks unnecessary  -->
+    <!-- <script type="text/javascript" src="https://careers.hgsoss.com/js/utils.js"></script>            Commented Out as these are not present in the file and looks unnecessary -->
+    <!-- <script type="text/javascript" src="https://careers.hgsoss.com/js/jquery.blockUI.js"></script> Commented Out as these are not present in the file and looks unnecessary-->
+    <!--<script type="text/javascript" src="https://careers.hgsoss.com/js/bootpopup.js"></script>   Commented Out as these are not present in the file and looks unnecessary -->
+    <!-- <script type="text/javascript" src="https://careers.hgsoss.com/js/moment-2.18.1.min.js"></script>   Commented Out as these are not present in the file and looks unnecessary -->
+    <!-- <script type="text/javascript" src="https://careers.hgsoss.com/js/bootstrap-datetimepicker.js"></script>   Commented Out as these are not present in the file and looks unnecessary -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80287603-4"></script> -->
+    <!-- <script type="text/javascript" src="https://careers.hgsoss.com/js/crudcontrols.js?v2.1.20230201"></script> Commented Out as these are not present in the file and looks unnecessary-->
+    <!--<script type="text/javascript" src="https://careers.hgsoss.com/js/jquery.inputmask.bundle.js"></script> Commented Out as these are not present in the file and looks unnecessary-->
+    <!-- <script type="text/javascript" src="https://careers.hgsoss.com/js/profile-photo.js"></script>  Commented Out as these are not present in the file and looks unnecessary -->
     <script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-		// gtag('config', 'UA-80287603-4');
-	</script>
-    <!-- for page specific scripts -->
-    <script type="text/javascript" src="https://careers.hgsoss.com/js/crudcontrols.js?v2.1.20230201"></script>
-    <script type="text/javascript" src="https://careers.hgsoss.com/js/jquery.inputmask.bundle.js"></script>
-    <script type="text/javascript" src="https://careers.hgsoss.com/js/profile-photo.js"></script>
+        // gtag('config', 'UA-80287603-4');  Commented out, no config provided
+    </script>
   </body>
 </html>
