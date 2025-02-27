@@ -584,11 +584,21 @@ crossorigin="anonymous"></script>
     <script>
          let isEditing = false;
         const notificationElement = document.getElementById('notification');
-         const notifications = [
-              "Hello Hiring Manager! 👋  Spotting top talent? Let's cut to the chase: 8+ years closing deals and leading teams.  Ready to boost your revenue? 😉 Let's chat!", // Welcome message for HR/Hiring Managers
-              "Did you know? 🤔 My outbound sales skills are so effective, I could sell ice to an Eskimo... twice! 📞💰 CRM? Consider it mastered. 😉",
-              "Quick Fact! ✨ I'm not just a resume; I'm a revenue-generating machine. 📈  Think of me as your company's ROI superhero. 😎",
-            `Just saying... 😜 My number is (09306359306).  Hiring me is like finding a unicorn that actually *does* exist. 🦄📞😂`,
+        // Original notifications array
+         const allNotifications = [
+              "Hello Hiring Manager! 👋  Spotting top talent? Let's cut to the chase: 8+ years closing deals and leading teams.  Ready to boost your revenue? Let's chat!", // Welcome message for HR/Hiring Managers
+              "📊 8+ years in B2B Sales & Lead Gen means I don't just find leads, I convert them into revenue.  Your targets are safe with me!", // Skills-focused - No Emoji
+              "🚀 Client Acquisition is my superpower. Watch event attendance and your client list soar!  Let's make some waves.", // Skills-focused - No Emoji
+              "⚙️ HubSpot CRM wizardry? Check!  I speak fluent CRM and can optimize your lead management like a pro.  Efficiency is my game.", // Skills-focused - No Emoji
+              "🤝 Sales & Team Leadership isn't just a title for me, it's a track record. I build winning teams and drive results. Ready for leadership?", // Skills-focused - No Emoji
+              "🎯 Consistently exceeding sales targets isn't luck, it's strategy and hard work. Expect results, not excuses.", // Skills-focused - No Emoji
+              "Navigator Ninja! 🥷 LinkedIn Sales Navigator? My playground. I find the needles in the haystack (aka, your ideal clients).", // Skills-focused - No Emoji
+              "📞 Cold Calling Connoisseur.  I turn 'hang-ups' into 'hook-ups' with your sales pipeline. Let's dial for dollars!", // Skills-focused - No Emoji
+              "🗓️ Appointment Setting Ace. My calendar skills are legendary.  I fill schedules with qualified prospects, guaranteed.", // Skills-focused - No Emoji
+              "🌱 Client Relationship Management? I cultivate clients like fine wine - long-term and valuable.  Let's build lasting partnerships.", // Skills-focused - No Emoji
+              "📈 Sales Reporting & KPIs are my compass. Data-driven decisions? Absolutely. I track, analyze, and optimize for peak performance.", // Skills-focused - No Emoji
+              "Event Sales Expert.  From webinars to conferences, I pack events with attendees and generate buzz.  Let's make your event the talk of the town.", // Skills-focused - No Emoji
+              `Just saying... My number is (09306359306).  Hiring me is like finding a unicorn that actually *does* exist. 🦄 (But seriously, call me!)`, // Still a bit of humor - No Emoji
               "I bring a blend of experience and enthusiasm to every campaign! 🚀  Think 'energizer bunny' but for sales.",
              "With a proven history in B2B sales, my experience speaks for itself! 🏆 ...but I'm happy to elaborate over a quick call! 📞",
               "Let's not just meet quotas; let's obliterate them! 📈  My goal? Make 'exceeding expectations' the new normal.",
@@ -597,6 +607,8 @@ crossorigin="anonymous"></script>
               "My HubSpot CRM skills are so sharp, I could probably organize your sock drawer. 🧦 ...but let's focus on leads for now!"
           ];
 
+        let notifications = [...allNotifications]; // Create a working copy
+
           // Function to enable editing of all contenteditable elements
           function enableEditing() {
             isEditing = true;
@@ -604,7 +616,7 @@ crossorigin="anonymous"></script>
            editableElements.forEach(element => {
               element.contentEditable = true;
            });
-            showNotification("Please note: Editing is enabled for demonstration. While you're at it, imagine the impact of my skills on *your* content. 😉");
+            showNotification("Please note: Editing is enabled for demonstration. While you're at it, imagine the impact of my skills on *your* content.");
         }
          function disableEditing() {
            isEditing = false;
@@ -615,7 +627,7 @@ crossorigin="anonymous"></script>
            showNotification("Editing is now disabled.  Back to business - let's discuss how my 'un-editable' skills can drive your company's success.");
          }
           function triggerHireMe() {
-             showNotification("Before you download? 🤔 Ask yourself:  Is your team *complete* without a proven sales rockstar? 🎸  Hint: the answer is no. 😉 Let's talk hire-me-now details.");
+             showNotification("Before you download? Ask yourself:  Is your team *complete* without a proven sales rockstar? 🎸  Hint: the answer is no. Let's talk hire-me-now details.");
         }
           function showNotification(message) {
            const notificationContent = document.getElementById('notification-content');
@@ -627,15 +639,19 @@ crossorigin="anonymous"></script>
            }
 
          function autoNotifications() {
-            // Show the welcome message immediately
-            showNotification(notifications[0]);
+            showNotification(notifications[0]); // Show welcome message first
+            notifications.shift(); // Remove welcome message from working array
 
-            // Start interval for other notifications, skipping the first one (welcome message)
             setInterval(() => {
-               // Start from index 1 to skip the welcome message after the first run
-               const randomIndex = Math.floor(Math.random() * (notifications.length - 1)) + 1;
+                if (notifications.length === 0) {
+                    notifications = [...allNotifications]; // Reset notifications if all shown
+                    notifications.shift(); // Remove welcome message again for reset case
+                }
+                const randomIndex = Math.floor(Math.random() * notifications.length);
                 const message = notifications[randomIndex];
                 showNotification(message);
+
+                notifications.splice(randomIndex, 1); // Remove shown notification to avoid repeats
             }, 15000); //Set delay for random messages
            }
 
