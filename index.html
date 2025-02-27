@@ -197,7 +197,32 @@
           background-color: #0A66C2;
           font-family: "SF Pro Text", Helvetica, sans-serif;
         }
+        /* Notification Popup Styles */
+        #notification {
+            position: fixed;
+            top: 20px; /* Changed from bottom */
+            right: 20px; /* Changed from left */
+            background-color: #001c41; /* Resume's primary color */
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+            z-index: 1000;
+            max-width: 300px; /* Optional: Limit width for better readability */
+        }
 
+        #notification.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #notification p {
+            margin: 0;
+            font-size: 1rem;
+        }
     </style>
   </head>
   <body>
@@ -533,6 +558,10 @@ readonly="readonly">Adept in generating leads for events.</textarea> </div>
         <p>Copyright © 2025 Flynn James Pontino RESUME. All rights reserved.</p>
       </div>
     </footer>
+    <!-- Notification Popup -->
+    <div id="notification">
+        <div id="notification-content"></div>
+    </div>
     <!-- Scripts -->
     <!-- Bootstrap 5 JS (Bundle includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -551,5 +580,68 @@ crossorigin="anonymous"></script>
     }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+         let isEditing = false;
+        const notificationElement = document.getElementById('notification');
+         const notifications = [
+              "Hello Hiring Manager! 👋  Spotting top talent? Let's cut to the chase: 8+ years closing deals and leading teams.  Ready to boost your revenue? 😉 Let's chat!", // Welcome message for HR/Hiring Managers
+              "Did you know? 🤔 My outbound sales skills are so effective, I could sell ice to an Eskimo... twice! 📞💰 CRM? Consider it mastered. 😉",
+              "Quick Fact! ✨ I'm not just a resume; I'm a revenue-generating machine. 📈  Think of me as your company's ROI superhero. 😎",
+            `Just saying... 😜 My number is (09306359306).  Hiring me is like finding a unicorn that actually *does* exist. 🦄📞😂`,
+              "I bring a blend of experience and enthusiasm to every campaign! 🚀  Think 'energizer bunny' but for sales.",
+             "With a proven history in B2B sales, my experience speaks for itself! 🏆 ...but I'm happy to elaborate over a quick call! 📞",
+              "Let's not just meet quotas; let's obliterate them! 📈  My goal? Make 'exceeding expectations' the new normal.",
+              "I’m here to solve problems and achieve company goals! 💼  Consider me your strategic weapon in the war against underperformance.",
+              "Ready to elevate your sales process, one call at a time! 📞  Let's turn dials into dollars together.",
+              "My HubSpot CRM skills are so sharp, I could probably organize your sock drawer. 🧦 ...but let's focus on leads for now!"
+          ];
+
+          // Function to enable editing of all contenteditable elements
+          function enableEditing() {
+            isEditing = true;
+           const editableElements = document.querySelectorAll('[contenteditable="false"]');
+           editableElements.forEach(element => {
+              element.contentEditable = true;
+           });
+            showNotification("Please note: Editing is enabled for demonstration. While you're at it, imagine the impact of my skills on *your* content. 😉");
+        }
+         function disableEditing() {
+           isEditing = false;
+           const editableElements = document.querySelectorAll('[contenteditable="true"]');
+           editableElements.forEach(element => {
+              element.contentEditable = false;
+           });
+           showNotification("Editing is now disabled.  Back to business - let's discuss how my 'un-editable' skills can drive your company's success.");
+         }
+          function triggerHireMe() {
+             showNotification("Before you download? 🤔 Ask yourself:  Is your team *complete* without a proven sales rockstar? 🎸  Hint: the answer is no. 😉 Let's talk hire-me-now details.");
+        }
+          function showNotification(message) {
+           const notificationContent = document.getElementById('notification-content');
+             notificationContent.innerHTML = `<p>${message}</p>`;
+            notificationElement.classList.add('show');
+            setTimeout(() => {
+                 notificationElement.classList.remove('show');
+               }, 5000); // Increased duration to 5 seconds for better readability
+           }
+
+         function autoNotifications() {
+            // Show the welcome message immediately
+            showNotification(notifications[0]);
+
+            // Start interval for other notifications, skipping the first one (welcome message)
+            setInterval(() => {
+               // Start from index 1 to skip the welcome message after the first run
+               const randomIndex = Math.floor(Math.random() * (notifications.length - 1)) + 1;
+                const message = notifications[randomIndex];
+                showNotification(message);
+            }, 15000); //Set delay for random messages
+           }
+
+           // Trigger auto notifications on page load
+        autoNotifications();
+
+    </script>
   </body>
 </html>
